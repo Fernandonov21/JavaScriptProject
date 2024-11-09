@@ -1,13 +1,13 @@
-// app.js
 const express = require('express');
 const app = express();
 
-// Configurar la ruta principal
+// Usa el puerto proporcionado por Heroku o 3000 como fallback
+const port = process.env.PORT || 3000;
+
 app.get('/', (req, res) => {
-    res.send('Hello, World!');  // Enviar "Hello, World!" como respuesta
+  res.send('Hello World!');
 });
 
-// Iniciar el servidor en el puerto 3000
-app.listen(3000, () => {
-    console.log('Servidor escuchando en http://localhost:3000');
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
